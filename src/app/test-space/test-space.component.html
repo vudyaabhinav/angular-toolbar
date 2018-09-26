@@ -1,0 +1,28 @@
+<app-toolbar>
+    <app-toolbar-item class="row-element" [faBtnIcon]="coffeeIcon" (click)="coffeeClick()"></app-toolbar-item>
+    <app-toolbar-item class="row-element" [faBtnIcon]="gamepadIcon" (click)="gameClick()"></app-toolbar-item>
+    <app-toolbar-item class="row-element" [faBtnIcon]="adjustIcon" (click)="showThisDiv = !showThisDiv"></app-toolbar-item>
+    <app-toolbar-item class="row-element" [faBtnIcon]="boldIcon" (click)="boldText = !boldText"></app-toolbar-item>
+    <app-toolbar-item class="row-element" [faBtnIcon]="ambulanceIcon" (click)="ambulanceClick()"></app-toolbar-item>
+    <app-toolbar-item class="row-element" [faBtnIcon]="searchIcon" (click)="showSearchBox = !showSearchBox"></app-toolbar-item>
+    <input type="text" class="row-element search-box" *ngIf="showSearchBox" [(ngModel)]="searchText"/>
+</app-toolbar>
+
+<br />
+
+<div class="sample-display-1" *ngIf="showThisDiv">
+    <p>Something Hidden!</p>
+</div>
+
+<br />
+
+<div class="sample-display-2">
+    <p [ngClass]="{'bold-text': boldText}">This is can be Bold!</p>
+</div>
+
+<br />
+
+<div class="sample-display-3" *ngIf="searchText">
+    <p>{{searchText}}</p>
+</div>
+
